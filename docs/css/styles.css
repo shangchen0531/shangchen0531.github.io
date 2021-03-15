@@ -1,0 +1,883 @@
+:root {
+    box-sizing: border-box;
+} 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+} 
+/*
+Media
+
+Displays images and/or body content beside one
+another.
+
+Markup:
+<div class="media">
+  <img class="media__image"
+    src="http://placehold.it/150x150" />
+  <div class="media__body">
+    <h4>Strength</h4>
+    <p>
+      Strength training is an important part of
+      injury prevention. Focus on your core&mdash;
+      especially your abs and glutes.
+    </p>
+  </div>
+</div>
+<div class="media">
+  <img class="media__image"
+    src="http://placehold.it/150x150" />
+  <div class="media__body">
+    <h4>Strength</h4>
+    <p>
+      Strength training is an important part of
+      injury prevention. Focus on your core&mdash;
+      especially your abs and glutes.
+    </p>
+  </div>
+  <img class="media__image"
+    src="http://placehold.it/150x150" />
+</div>
+
+Styleguide Media
+*/
+.media {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5em;
+    background-color: #eee;
+    border-radius: 0.5em;
+}
+
+.media > * + * {
+    margin-left: 1.5em;
+}
+
+.media__body {
+    margin-top: 0;
+}
+
+.media__body > h4 {
+    margin-top: 0;
+}
+
+.media--right {
+    flex-direction: row-reverse;
+}
+  
+/*
+Buttons
+
+Buttons are available in a number of sizes and
+colors. You may mix and match any size with any
+color.
+
+Markup:
+<button class="button {{modifier_class}}">
+  click here
+</button>
+
+.button--success  - A green success button
+.button--danger   - A red danger button
+.button--small    - A small button
+.button--large    - A large button
+
+Styleguide Buttons
+*/
+
+.button {
+    padding: 1em 1.25em;
+    border: 1px solid #265559;
+    border-radius: 0.2em;
+    background-color: transparent;
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.button--success {
+    border-color: #cfe8c9;
+    color: #fff;
+    background-color: #2f5926;
+}
+
+.button--danger {
+    border-color: #e8c9c9;
+    color: #fff;
+    background-color: #a92323;
+}
+
+.button--small {
+    font-size: 0.8rem;
+}
+
+.button--large {
+    font-size: 1.2rem;
+}
+
+/*
+Dropdown
+
+A dropdown menu. Clicking the toggle button opens
+and closes the drawer.
+
+Use JavaScript to toggle the `is-open` class in
+order to open and close the dropdown.
+
+Markup:
+<div class="dropdown">
+    <button class="dropdown__toggle">Open menu</button>
+    <div class="dropdown__drawer">
+        Drawer contents
+    </div>
+</div>
+
+Styleguide Dropdown
+*/
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+} 
+.dropdown__toggle {
+    padding: 0.5em 2em 0.5em 1.5em;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #eee;
+} 
+.dropdown__toggle::after {
+    content: "";
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border: 0.3em solid;
+    border-color: black transparent transparent;
+} 
+.dropdown__drawer {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 2.1em;
+    min-width: 100%;
+    background-color: #eee;
+} 
+.dropdown.is-open .dropdown__toggle::after {
+    top: 0.7em;
+    border-color: transparent transparent black;
+} 
+.dropdown.is-open .dropdown__drawer {
+    display: block;
+} 
+
+/*
+Text center
+
+center text within a block by applying `text-center`
+
+Markup:
+<p class="text-center">Centered text</p>
+
+Weight: 1
+
+Styleguide Utilities.text-center
+*/
+.text-center {
+    text-align: center !important;
+}
+
+/*
+Float left
+
+Float an element to the left with `float-left`
+
+Weight: 3
+
+Styleguide Utilities.float-left
+*/
+.float-left {
+    float: left;
+}
+
+/*
+Clearfix
+
+Add the class `clearfix` to an element to force it tot contain its float contents
+
+Markup:
+<div class="clearfix">
+    <span class="float-left">floated</span>
+</div>
+
+Weight: 2
+
+Styleguide Utilities.clearfix
+*/
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/*
+Radial fade exercise
+
+收录练习中的径向渐变效果
+
+Markup:
+<div class="fade__radial {{modifier_class}}"></div>
+
+.fade__repeat - 重复渐变
+.fade__radial__circle - 圆形径向渐变
+.fade__radial__1      - 大小为3em, 中心点距离左侧和顶部边缘都为25%
+.fade__radial__2      - 指定颜色节点位置的径向渐变
+.fade__radial__3      - 重复渐变生成条纹效果
+
+Styleguide Radial fade exercise
+*/
+.fade {
+    height: 200px;
+    width: 400px;
+    background-image: linear-gradient(90deg, 
+    red 30%, white 30%, white 60%, blue 60%);
+}
+
+.fade__radial {
+    height: 200px;
+    width: 400px;
+    background-image: radial-gradient(white, blue);
+}
+
+.fade__repeat {
+    height: 1em;
+    width: 400px;
+    background-image: repeating-linear-gradient(-45deg, 
+    #57b, #57b 10px, #5eb 10px, #5eb 20px);
+    border-radius: 0.3em;
+} 
+
+.fade__radial__circle {
+    background-image: radial-gradient(circle, white, midnightblue);
+}
+
+.fade__radial__1 {
+    background-image: radial-gradient(3em at 25% 25%, white, midnightblue);
+}
+
+.fade__radial__2 {
+    background-image: radial-gradient(circle, midnightblue 0%, white 75%, red 100%);
+}
+
+.fade__radial__3 {
+    background-image: repeating-radial-gradient(circle, midnightblue 0, midnightblue 1em, white 1em, white 2em);
+}
+
+/*
+Shadow exercise
+
+收录阴影练习效果
+
+Markup:
+<button class="button {{modifier_class}}">Sign up now</button>
+
+.button__shadow__1 - 拟物化按钮
+.button__shadow__2 - 扁平化按钮
+.button__shadow__3 - 另一种类型的扁平化按钮(介于拟物和扁平之间)
+
+Styleguide Shadow exercise
+*/
+.button__shadow__1 {
+    padding: 1em;
+    border: 0;
+    font-size: 0.8rem;
+    color: white;
+    border-radius: 0.5em;
+    background-image: linear-gradient(to bottom, #57b, #148);
+    box-shadow: 0.1em 0.1em 0.5em #124;
+}
+.button__shadow__1:active {
+    box-shadow: inset 0 0 0.5em #124,
+                inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
+}
+
+.button__shadow__2 {
+    padding: 1em;
+    border: 0;
+    color: white;
+    background-color: #57b;
+    font-size: 1rem;
+    padding: 0.8em;
+    box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.15);
+}
+.button__shadow__2:hover {
+    background-color: #456ab6;
+}
+.button__shadow__2:active {
+    background-color: #148;
+}
+
+.button__shadow__3 {
+    padding: 0.8em;
+    border: 0;
+    font-size: 1em;
+    color: white;
+    border-radius: 0.5em;
+    background-color: #57b;
+    box-shadow: 0 0.4em #148;
+    text-shadow: 1px 1px #148;
+}
+.button__shadow__3:active {
+    background-color: #456ab5;
+    transform: translateY(0.1em);
+    box-shadow: 0 0.3em #148;
+}
+
+.button__shadow__1:focus,
+.button__shadow__2:focus,
+.button__shadow__3:focus {
+    outline: 0;
+}
+
+/*
+Image exercise
+
+图片效果练习
+
+Markup:
+<div class="{{modifier_class}}"></div>
+
+.blend__multiply     - 叠加模式
+.blend__luminosity   - 为图片着色
+.blend__soft__light  - 为图片添加纹理
+.blend__text         - 混合文字和图片
+
+Styleguide Image exercise
+*/
+.blend__multiply {
+    min-height: 400px;
+    background-image: url(../images/bear.jpg),
+                      url(../images/bear.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -30vw, 30vw;
+    background-blend-mode: multiply;
+}
+
+.blend__luminosity {
+    min-height: 400px;
+    background-image: url(../images/bear.jpg);
+    background-color: #148;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: luminosity;
+}
+
+.blend__soft__light {
+    min-height: 400px;
+    background-image: url(../images/scratches.png), 
+                      url(../images/bear.jpg);
+    background-size: 200px, cover;
+    background-repeat: repeat, no-repeat;
+    background-position: center center;
+    background-blend-mode: soft-light;
+}
+
+.blend__text {
+    background-image: url(../images/bear.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 5em 0 10em;
+}
+.blend__text > h1 {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    mix-blend-mode: hard-light;
+    background-color: #c33;
+    color: #808080;
+    border: 0.1em solid #ccc;
+    border-width: 0.1em 0;
+}
+
+/*
+Color
+
+测试颜色效果
+
+Markup:
+<div class="color__base {{modifier_class}}"></div>
+
+.color__076448 - 品牌绿
+.color__099268 - 深绿色
+.color__20c997 - 中绿色
+.color__212529 - 文本颜色
+.color__868e96 - 灰色
+.color__f1f3f5 - 深灰色
+.color__f8f9fa - 超浅灰
+.color__ffffff - 白色
+
+Styleguide Color
+*/
+.color__base {
+    height: 100px;
+    width: 400px;
+    background-color: #f8f9fa;
+}
+.color__076448 {
+	background-color: #076448;
+}
+.color__099268 {
+	background-color: #099268;
+}
+.color__20c997 {
+	background-color: #20c997;
+}
+.color__212529 {
+	background-color: #212529;
+}
+.color__868e96 {
+	background-color: #868e96;
+}
+.color__f1f3f5 {
+	background-color: #f1f3f5;
+}
+.color__f8f9fa {
+	background-color: #f8f9fa;
+}
+.color__ffffff {
+	background-color: #ffffff;
+}
+
+/*
+Button transition
+
+过渡效果展示
+
+Markup:
+<button class="button {{modifier_class}}">Hover over me</button>
+
+.transition__button__basic - 简单过渡效果
+
+Styleguide Transition.button
+*/
+.transition__button__basic {
+    background-color: hsl(180, 50%, 50%);
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    padding: .3em 1em;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+.transition__button__basic:hover {
+    background-color: hsl(0, 50%, 50%);
+    border-radius: 1em;
+}
+
+/*
+Timing function demo
+
+定时函数演示
+
+Markup:
+<div class="tf__container">
+    <div class="tf__no-transition {{modifier_class}}"></div>
+</div>
+
+.tf__linear      - 线性过渡
+.tf__ease-in     - 加速
+.tf__ease-out    - 减速
+.tf__ease-in-out - 先加速后减速
+.tf__steps-3     - 三次非连续性的阶跃过渡 
+
+Styleguide Transition.timingfunction
+*/
+.tf__container {
+    position: relative;
+    height: 30px;
+}
+.tf__container:hover * {
+    left: 400px;
+}
+.tf__no-transition {
+    position: absolute;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: hsl(130, 50%, 50%);
+}
+.tf__linear {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+.tf__ease-in {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+}
+.tf__ease-out {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+.tf__ease-in-out {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+.tf__steps-3 {
+    transition: all 1s steps(3);
+}
+/*
+Menu transition
+
+下拉菜单过渡效果-淡出淡入与滑动
+
+Markup:
+<div class="tf__dropdown" aria-haspopup="true">
+    <button class="tf__dropdown__toggle">Menu</button>
+    <div class="tf__dropdown__drawer">
+        <ul class="tf__menu" role="menu">
+            <li role="menuitem">
+                <a href="/features">Features</a>
+            </li>
+            <li role="menuitem">
+                <a href="/pricing">Pricing</a>
+            </li>
+            <li role="menuitem">
+                <a href="/support">Support</a>
+            </li>
+            <li role="menuitem">
+                <a href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<p><a href="/read-more">淡出淡入</a></p>
+<div class="tf__glide__dropdown" aria-haspopup="true">
+    <button class="tf__glide__dropdown__toggle">Menu</button>
+    <div class="tf__glide__dropdown__drawer">
+        <ul class="tf__menu" role="menu">
+            <li role="menuitem">
+                <a href="/features">Features</a>
+            </li>
+            <li role="menuitem">
+                <a href="/pricing">Pricing</a>
+            </li>
+            <li role="menuitem">
+                <a href="/support">Support</a>
+            </li>
+            <li role="menuitem">
+                <a href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<p><a href="/read-more">滑动</a></p>
+
+Weight: 2
+
+Styleguide Transition.Menu
+*/
+.tf__dropdown__toggle {
+    display: block;
+    padding: 0.5em 1em;
+    border: 1px solid hsl(280, 10%, 80%);
+    color: hsl(280, 30%, 60%);
+    background-color: white;
+    font: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s linear;
+}
+.tf__dropdown__toggle:hover {
+    background-color: hsl(280, 15%, 95%);
+}
+.tf__dropdown__drawer {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background-color: white;
+    width: 10em;
+    transition: opacity 0.2s linear,
+                visibility 0s linear 0.2s;
+}
+.tf__dropdown.is-open .tf__dropdown__drawer {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.tf__glide__dropdown__toggle {
+    display: block;
+    padding: 0.5em 1em;
+    border: 1px solid hsl(280, 10%, 80%);
+    color: hsl(280, 30%, 60%);
+    background-color: white;
+    font: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s linear;
+}
+.tf__glide__dropdown__toggle:hover {
+    background-color: hsl(280, 15%, 95%);
+}
+.tf__glide__dropdown__drawer {
+    position: absolute;
+    overflow: hidden;
+    background-color: white;
+    width: 10em;
+    height: 0;
+    transition: height 0.3s ease-out;
+}
+
+
+
+.tf__menu {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+.tf__menu > li + li > a {
+    border-top: 0;
+}
+.tf__menu > li > a {
+    display: block;
+    padding: 0.5em 1em;
+    color: hsl(280, 40%, 60%);
+    background-color: white;
+    text-decoration: none;
+    transition: all .2s linear;
+    border: 1px solid hsl(280, 10%, 80%);
+}
+.tf__menu > li > a:hover {
+    background-color: hsl(280, 15%, 95%);
+    color: hsl(280, 25%, 10%);
+}
+
+/*
+Transform
+
+变换效果展示
+
+Markup:
+<div class="card__container">
+    <div class="card {{modifier_class}}">
+        <img src="images/chicken1.jpg" alt="a chicken" />
+        <h4>Mrs. Featherstone</h4>
+        <p> She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+    lays her largish cream-colored eggs on a daily basis. She is gregarious
+    to a fault.</p>
+        <p>This Austra White is our most prolific producer.</p>
+    </div>
+</div>
+
+.card-rotate    - 旋转卡片
+.card-scale     - 缩放卡片
+.card-skew      - 倾斜卡片
+.card-translate - 平移卡片
+
+Styleguide Transform
+*/
+.card__container {
+    background-color: hsl(210, 80%, 20%);
+    font-family: Helvetica, Arial, sans-serif;
+    width: 500px;
+}
+.card__container img {
+    max-width: 100%;
+}
+.card {
+    padding: 0.5em;
+    margin: 0 auto;
+    background-color: hsl(210, 17%, 95%);;
+    max-width: 300px;
+}
+.card-rotate {
+    transform: rotate(15deg);
+}
+.card-scale {
+    transform: scale(0.5);
+}
+.card-skew {
+    transform: skew(20deg);
+}
+.card-translate {
+    transform: translate(20px, 40px);
+}
+
+/*
+Animation keyframes
+
+关键帧动画演示
+
+Markup:
+<div class="am__keyframes"></div>
+
+Styleguide Animation.keyframes
+*/
+@keyframes over-and-back {
+    0% {
+        background-color: hsl(0, 50%, 50%);
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(50px);
+    }
+
+    100% {
+        background-color: hsl(270, 50%, 90%);
+        transform: translate(0);
+    }
+}
+.am__keyframes {
+    width: 100px;
+    height: 100px;
+    background-color: hsl(0, 50%, 50%);;
+    animation: over-and-back 1.5s linear 3;
+}
+
+/*
+Animation keyframes button
+
+按钮等待动画
+
+Markup:
+<button class="am__button">Save</button>
+
+Styleguide Animation.keyframes-button
+*/
+.am__button {
+    padding: 0.6em 1em;
+    border: 0;
+    background-color: hsl(220, 50%, 50%);
+    color: white;
+    font: inherit;
+    transition: background-color 0.3s linear;
+}
+.am__button:hover {
+    background-color: hsl(220, 45%, 40%);
+}
+
+.am__button.is-loading {
+    position: relative;
+    color: transparent;
+}
+.am__button.is-loading::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.7em;
+    margin-top: -0.7em;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+Animation keyframes button shake
+
+按钮摇晃动画
+
+Markup:
+<label for="trip" class="am__label">Tell us about your first trip to the zoo:</label>
+<textarea id="trip" rows="5"></textarea>
+<button class="am__button am__button__shake">Save</button>
+
+Styleguide Animation.keyframes-button-shake
+*/
+.am__label,
+#trip {
+ display: block;
+ margin-bottom: 1em;
+}
+.shake {
+    animation: shake 0.7s linear;
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-0.4em);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(0.4em);
+    }
+
+    80% {
+        transform: translateX(0.3em);
+    }
+    
+    90% {
+        transform: translateX(-0.3em);
+    }
+}
+
+/*
+Animation ripple effect
+
+鼠标悬浮波纹效果
+
+Markup:
+<div class="ripple"></div>
+
+Styleguide Animation.ripple
+*/
+.ripple {
+    height: 108px;
+    width: 108px;
+    background-color: hsl(0deg, 0%, 24%);
+    border-radius: 50%;
+}
+.ripple::after {
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-radius: 50%;
+    background-color: hsl(0deg, 0%, 35%);
+    opacity: 0;
+    z-index: 101;
+    -webkit-transform: scale(.2);
+    transform: scale(.2);
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.ripple:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
