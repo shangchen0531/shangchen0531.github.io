@@ -362,8 +362,8 @@ Styleguide Image exercise
 */
 .blend__multiply {
     min-height: 400px;
-    background-image: url(../css-in-depth/ch11/images/bear.jpg),
-                      url(../css-in-depth/ch11/images/bear.jpg);
+    background-image: url(../docs/images/bear.jpg),
+                      url(../docs/images/bear.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: -30vw, 30vw;
@@ -372,7 +372,7 @@ Styleguide Image exercise
 
 .blend__luminosity {
     min-height: 400px;
-    background-image: url(../css-in-depth/ch11/images/bear.jpg);
+    background-image: url(../docs/images/bear.jpg);
     background-color: #148;
     background-size: cover;
     background-repeat: no-repeat;
@@ -382,8 +382,8 @@ Styleguide Image exercise
 
 .blend__soft__light {
     min-height: 400px;
-    background-image: url(../css-in-depth/ch11/images/scratches.png), 
-                      url(../css-in-depth/ch11/images/bear.jpg);
+    background-image: url(../docs/images/scratches.png), 
+                      url(../docs/images/bear.jpg);
     background-size: 200px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -391,7 +391,7 @@ Styleguide Image exercise
 }
 
 .blend__text {
-    background-image: url(../css-in-depth//ch11/images/bear.jpg);
+    background-image: url(../docs/images/bear.jpg);
     background-size: cover;
     background-position: center;
     padding: 5em 0 10em;
@@ -671,7 +671,7 @@ Transform
 Markup:
 <div class="card__container">
     <div class="card {{modifier_class}}">
-        <img src="../css-in-depth/ch15/images/chicken1.jpg" alt="a chicken" />
+        <img src="images/chicken1.jpg" alt="a chicken" />
         <h4>Mrs. Featherstone</h4>
         <p> She may be a bit frumpy, but Mrs Featherstone gets the job done. She
     lays her largish cream-colored eggs on a daily basis. She is gregarious
