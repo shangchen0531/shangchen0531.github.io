@@ -881,3 +881,35 @@ Styleguide Animation.ripple
     transform: scale(1);
     opacity: 1;
 }
+
+/*
+Steam card effect
+
+Steam 集换式卡牌特效
+
+Markup:
+<div class="steam__card__container" style="width: 20em; height: 10em">
+    <img src="images/card2.png" alt="Steam Trading Card - Dead Cells - The Cursed Sword" 
+class="steam__card" />
+</div>
+
+Styleguide NiceEffect.Steam-Trading-Card-Hover-Effect
+*/
+.steam__card__container {
+    display: flex;
+    min-height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+.steam__card {
+    max-width: 180px;
+    transition: all .15s linear;
+    transform-origin: center center;
+    box-shadow: 0.1em 0.1em 0.5em rgb(0, 0, 0);
+}
+
+.steam__card:hover {
+    max-width: 360px;
+    transform: rotateX(var(--x-rotation, 0)) rotateY(var(--y-rotation, 0));
+    filter: brightness(var(--brightness, 1));
+}

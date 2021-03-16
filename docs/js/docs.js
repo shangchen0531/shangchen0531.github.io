@@ -52,7 +52,7 @@
 
 (function (){
     var button = document.getElementsByClassName('am__button');
-    if (!button) return ;
+    if (button.length === 0) return ;
 
     button[0].addEventListener('click', function(event) {
         event.preventDefault();
@@ -79,5 +79,21 @@
 
     button[1].addEventListener('animationend', function() {
         button[1].classList.remove('shake');
+    });
+}());
+
+(function(){
+    // 集换式卡牌特效
+    const card = document.querySelector('.steam__card')
+
+    card.addEventListener('mousemove', event => {
+    const y = event.offsetY - 180,
+            xRotation = y / -360,
+            x = event.offsetX - 180,
+            yRotation = x / 360,
+            brightness = (Math.abs(-360 + x + y) / 360) + .5;
+    card.style.setProperty('--x-rotation', xRotation + 'rad');
+    card.style.setProperty('--y-rotation', yRotation + 'rad');
+    card.style.setProperty('--brightness', brightness);
     });
 }());
