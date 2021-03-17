@@ -916,6 +916,7 @@ Styleguide NiceEffect.Steam-Trading-Card-Hover-Effect
 }
   
 .card3d:hover {
+    cursor: pointer;
     z-index: 10;
     transform: scale(1.3);
 }
