@@ -932,7 +932,7 @@ Flyin Card
 飞入卡牌特效
 
 Markup:
-<div class="flyin-grid">
+<div class="flyin-grid {{modifier_class}}">
     <div class="flyin-grid__item card">
         <img src="images/chicken1.jpg" alt="a chicken" />
         <h4>Mrs. Featherstone</h4>
@@ -961,6 +961,9 @@ Markup:
     </div>
 </div>
 
+.flyin-1 - 飞入特效1
+.flyin-2 - 飞入特效2
+
 Styleguide FlyinCard
 */
 .flyin-grid {
@@ -969,10 +972,15 @@ Styleguide FlyinCard
     background: radial-gradient(circle, rgba(84,92,97,1) 0%, rgba(23,41,48,1) 100%); 
     perspective: 500px;
 }
-
 .flyin-grid__item {
-    animation: fly-in 600ms ease-in;
+    
     animation-fill-mode: backwards;
+}
+.flyin-1 .flyin-grid__item {
+    animation: fly-in 600ms ease-in;
+}
+.flyin-2 .flyin-grid__item {
+    animation: fly-in-2 600ms cubic-bezier(.56,.1,.34,1.49);
 }
 .flyin-grid__item:nth-child(2) {
     animation-delay: 0.15s;
@@ -980,12 +988,10 @@ Styleguide FlyinCard
 .flyin-grid__item:nth-child(3) {
     animation-delay: 0.3s;
 } 
-
 .flyin-grid .card {
     box-shadow: 0.2em 0.5em 1em rgba(0, 0, 0, 0.3);
     margin: 16px;
 }
-
 .flyin-grid .card > img {
     width: 100%;
 }
@@ -1029,3 +1035,13 @@ Styleguide FlyinCard
         transform: translateZ(0) rotateY(0);
     } 
 } 
+
+@keyframes fly-in-2 {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
