@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/shangchen0531.github.io/static/css/main.d8bfed09.chunk.css",
+    "main.js": "/shangchen0531.github.io/static/js/main.c1f6c7a7.chunk.js",
+    "main.js.map": "/shangchen0531.github.io/static/js/main.c1f6c7a7.chunk.js.map",
+    "runtime-main.js": "/shangchen0531.github.io/static/js/runtime-main.162237a0.js",
+    "runtime-main.js.map": "/shangchen0531.github.io/static/js/runtime-main.162237a0.js.map",
+    "static/css/2.c02757eb.chunk.css": "/shangchen0531.github.io/static/css/2.c02757eb.chunk.css",
+    "static/js/2.12cc9e52.chunk.js": "/shangchen0531.github.io/static/js/2.12cc9e52.chunk.js",
+    "static/js/2.12cc9e52.chunk.js.map": "/shangchen0531.github.io/static/js/2.12cc9e52.chunk.js.map",
+    "static/js/3.d79c3068.chunk.js": "/shangchen0531.github.io/static/js/3.d79c3068.chunk.js",
+    "static/js/3.d79c3068.chunk.js.map": "/shangchen0531.github.io/static/js/3.d79c3068.chunk.js.map",
+    "index.html": "/shangchen0531.github.io/index.html",
+    "static/css/2.c02757eb.chunk.css.map": "/shangchen0531.github.io/static/css/2.c02757eb.chunk.css.map",
+    "static/css/main.d8bfed09.chunk.css.map": "/shangchen0531.github.io/static/css/main.d8bfed09.chunk.css.map",
+    "static/js/2.12cc9e52.chunk.js.LICENSE.txt": "/shangchen0531.github.io/static/js/2.12cc9e52.chunk.js.LICENSE.txt",
+    "static/media/adds.451e3f86.svg": "/shangchen0531.github.io/static/media/adds.451e3f86.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.162237a0.js",
+    "static/css/2.c02757eb.chunk.css",
+    "static/js/2.12cc9e52.chunk.js",
+    "static/css/main.d8bfed09.chunk.css",
+    "static/js/main.c1f6c7a7.chunk.js"
+  ]
+}
